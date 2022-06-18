@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cosmosineers - NFT collection | Cosmosineers NFT collection of generative sketch cartoon art</title>
+</head>
+<body>
+<script type="text/javascript">
+    /**
+    * Handles all HTTP requests
+    *
+    * 1. if a digit is not in params (?345) then display loader.html with no arguments
+    * 2. if a digit is in the params redirect to (loader.html?345) with that request
+    *
+    **/
+    const cosmosineerSearch = decodeURIComponent(document.location.search);
+    // console.log(cosmosineerSearch);
+    if (cosmosineerSearch) {
+        const cosmosineerId = cosmosineerSearch.split('?s=')[1].trim();
+        console.log(cosmosineerId);
+        if (cosmosineerId && (cosmosineerId > 0) && (cosmosineerId < 10001)){
+          document.location.assign('loader.html?'+cosmosineerId);
+        } else {
+          document.location.assign('loader.html');
+        }
+    } else {
+        document.location.assign('loader.html');
+    }
+</script>
+</body>
+</html>
